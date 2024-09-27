@@ -8,7 +8,7 @@
       ansible.builtin.package_facts:
         manager: auto
 
-    - name: Check if 'cups-browsed' is installed
+    - name: Removing 'cups-browsed' if installed
       ansible.builtin.package:
         name: "cups-browsed"
         state: absent
