@@ -1,0 +1,14 @@
+---
+- name: Remove installed packages
+  hosts: group_name
+  become: yes
+
+  tasks:
+    - name: Collecting installed packages
+      ansible.builtin.package_facts:
+        manager: auto
+
+    - name: Check if 'cups-browsed' is installed
+      ansible.builtin.package:
+        name: "cups-browsed"
+        state: absent
